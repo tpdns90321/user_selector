@@ -10,7 +10,7 @@ func numberInput() (int, error) {
 	fmt.Println("Select Number (1 ~ ) : ")
 
 	var nstr string
-	fmt.Scanf("%d\n", nstr)
+	fmt.Scanln(nstr)
 	num, err := strconv.ParseInt(nstr, 10, 64)
 	if err != nil {
 		return -1, errors.New("Wrong Number")
