@@ -7,7 +7,7 @@ import (
 )
 
 func numberInput() (int, error) {
-	fmt.Println("Select Number (1 ~ ) : ")
+	fmt.Print("Select Number (1 ~ ) : ")
 
 	var nstr string
 	fmt.Scanf("%s", &nstr)
