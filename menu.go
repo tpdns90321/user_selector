@@ -11,7 +11,7 @@ func numberInput() (int, error) {
 
 	var nstr string
 	fmt.Scanf("%s", &nstr)
-	num, err := strconv.ParseInt(nstr, 10, 64)
+	num, err := strconv.ParseUint(nstr, 10, 64)
 	if err != nil {
 		return -1, errors.New("Wrong Number")
 	}
@@ -30,13 +30,9 @@ func Menu(data []string, f func(string) error) error {
 	num, err = numberInput()
 	if err != nil {
 		return err
-	}
-
-	if num == 0 {
+	} else if num == 0 {
 		return nil
-	}
-
-	if len(data) <= num-1 {
+	} else if len(data) <= num-1 {
 		return errors.New("Overwhelm Number")
 	}
 
